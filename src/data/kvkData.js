@@ -1,0 +1,45 @@
+export const KVK_DIRECTORY = {
+  thane: { name: "Dr. Suresh D. Jagadale", phone: "9867929210", email: "kvkthane@gmail.com" },
+  solapur: { name: "Dr. Tanaji Ramhari Walkunde", phone: "9404948904", email: "kvkmohol@yahoo.com" },
+  dhule: { name: "Dr. Dinesh R. Nandre", phone: "7588517339", email: "pckvkdhule@gmail.com" },
+  jalgaon: { name: "Dr. Hemant Baheti", phone: "07588580512", email: "kvk.jalgaon2@icar.gov.in" },
+  satara: { name: "Dr. Mohan Shankar Shirke", phone: "09850613640", email: "kvkborgaon_satara@yahoo.com" },
+  osmanabad: { name: "Er. Sachin L. Suryawanshi", phone: "09850773023", email: "kvktuljapur@gmail.com" },
+  dharashiv: { name: "Er. Sachin L. Suryawanshi", phone: "09850773023", email: "kvktuljapur@gmail.com" },
+  beed: { name: "Dr. Ajay Kishanrao Kinkhedkar", phone: "8208502210", email: "kvkmkv@rediffmail.com" },
+  aurangabad: { name: "Dr. Kishor Zade", phone: "8275388049", email: "pckvkmau@gmail.com" },
+  chhatrapati_sambhajinagar: { name: "Dr. Kishor Zade", phone: "8275388049", email: "pckvkmau@gmail.com" },
+  jalna: { name: "Dr. Sachinkumar D. Somwanshi", phone: "9404957356", email: "kvk.jalna2@gmail.com" },
+  bhandara: { name: "Dr. Nilesh S. Wazire", phone: "8007775613", email: "kvkbhandara@gmail.com" },
+  wardha: { name: "Dr. V. S. Sakharkar", phone: "9529265689", email: "kvk.wardha@gmail.com" },
+  buldhana: { name: "Dr. C.P. Jaybhaye", phone: "09011021280", email: "kvkbhandara@gmail.com" },
+  buldana: { name: "Mr. Vikas G. Jadhao", phone: "9423338595", email: "kvkbuldana@gmail.com" },
+  chandrapur: { name: "Dr. V. G. Nagdeote", phone: "09421800590", email: "pckvksindewahi@gmail.com" },
+  gadchiroli: { name: "Dr. Sandip S. Karhale", phone: "9404270054", email: "kvksonapur@gmail.com" },
+  gondia: { name: "Dr. Narendrakumar S. Deshmukh", phone: "7588501489", email: "kvk_gondia@rediffmail.com" },
+  yavatmal: { name: "Dr. Suresh Uttamrao Nemade", phone: "09421771374", email: "pckvkytl@yahoo.co.in" },
+  raigad: { name: "Dr. Manoj Sudhakar Talathi", phone: "09422094441", email: "kvk_roha@rediffmail.com" },
+  ratnagiri: { name: "Dr. A. A. Hanmante", phone: "9822310859", email: "kvkratnagiri@rediffmail.com" },
+  nagpur: { name: "Dr. S. N. Rokde", phone: "9850347022", email: "kvkcicrnagpur@gmail.com" },
+  nashik: { name: "Dr. Raosaheb Bhaskaarrao Patil", phone: "09403774654", email: "kvknashik@rediffmail.com" },
+  sangli: { name: "Dr. Dinar Sarjerao Patil", phone: "9881450666", email: "kvksangli@rediffmail.com" },
+  kolhapur: { name: "Mr. Jaywant Bhargav Jagtap", phone: "09423862713", email: "kvkkolhapur@gmail.com" },
+  nanded: { name: "Dr. Suresh Kulkarni", phone: "09890382130", email: "kvksagroli@gmail.com" },
+  pune: { name: "Dr. Ratan Sukhadev Jadhav", phone: "9075017093", email: "kvkbmt@yahoo.com" },
+  palghar: { name: "Dr. Vilas Mahadeo Jadhav", phone: "09673730858", email: "kvkkosbad439@gmail.com" },
+  hingoli: { name: "Dr. Pramodkumar Shelke", phone: "9765390976", email: "kvkhingoli@gmail.com" },
+  amravati: { name: "Dr. K. A. Dhapke", phone: "09922410177", email: "kkad_11@rediffmail.com" },
+  akola: { name: "Dr. Umesh Ganeshrao Thakare", phone: "07038055655", email: "pc@kvkakola.org" },
+  washim: { name: "Dr. Ravindra Kale", phone: "07350205746", email: "kvk.washim@yahoo.com" },
+  ahmednagar: { name: "Dr. S. S. Kaushik", phone: "09424654119", email: "kvkdahigaon@gmail.com" },
+  parbhani: { name: "Dr. Prashant Bhosale", phone: "09421386929", email: "kvkpbn94@yahoo.co.in" },
+  sindhudurg: { name: "Mr. Bhaskar V. Kajarekar", phone: "9423879271", email: "kvksin@rediffmail.com" },
+  latur: { name: "Dr. Sachin Swaruprao Digrase", phone: "09404957511", email: "kvklaturms@gmail.com" },
+  nandurbar: { name: "Shri. R. S. Dahatonde", phone: "09657323334", email: "kvk_ndb@yahoo.com" },
+};
+
+export function getKVKByDistrict(districtName) {
+  if (!districtName) return KVK_DIRECTORY["thane"];
+  const key = districtName.trim().toLowerCase().replace(/\s+/g, "_");
+  return KVK_DIRECTORY[key] || KVK_DIRECTORY["thane"];
+}

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export function middleware(request) {
-  // CRITICAL FIX: Changed 'token' to 'auth_token'
+
   const token = request.cookies.get('auth_token')?.value;
   const { pathname } = request.nextUrl;
 

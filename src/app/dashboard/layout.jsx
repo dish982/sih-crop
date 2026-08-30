@@ -9,16 +9,17 @@ import {
   LayoutDashboard, 
   Sprout, 
   ScanSearch, 
-  TrendingUp, 
+  Settings,
   User, 
+  CloudSunIcon
 } from 'lucide-react';
 
 const NAV_ITEMS = [
   { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
-  { name: 'Crop Advisory', href: '/dashboard/crop-advisory', icon: Sprout },
   { name: 'Disease Detection', href: '/dashboard/disease-detect', icon: ScanSearch },
-  { name: 'Market Prices', href: '/dashboard/mandi-prices', icon: TrendingUp },
+  { name: "Weather Risk", href: "/dashboard/weather-risk", icon: CloudSunIcon },
   { name: 'Profile', href: '/dashboard/farmer-details', icon: User },
+  { name: 'Settings', href: '/dashboard/settings', icon: Settings },
 ];
 
 export default async function DashboardLayout({ children }) {
@@ -43,10 +44,12 @@ export default async function DashboardLayout({ children }) {
       name: decoded.name || 'Farmer User',
       state: decoded.state || '',
       role: decoded.role || 'Farmer',
+      
     };
   } catch (err) {
     redirect('/login');
   }
+  
 
   const initialLetter = user.name.charAt(0).toUpperCase();
 
@@ -63,7 +66,7 @@ export default async function DashboardLayout({ children }) {
             </div>
             <div>
               <h1 className="font-bold text-lg text-primary-green leading-tight">Smart Crop</h1>
-              <p className="text-xs text-text-subtle">Advisory System</p>
+              <p className="text-xs text-text-subtle">Management of Crop Diseases</p>
             </div>
           </div>
 
@@ -93,6 +96,8 @@ export default async function DashboardLayout({ children }) {
             </div>
             <div>
               <p className="text-sm font-semibold text-text-main leading-tight truncate">{user.name}</p>
+              {console.log(user.name)}
+              
               <p className="text-xs text-text-subtle truncate">{user.state ? user.state : user.role}</p>
             </div>
           </div>
